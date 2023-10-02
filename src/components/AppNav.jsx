@@ -16,7 +16,6 @@ const AppNav = () => {
           <NavLink className={styles.countries} onClick={() => setToggle(false)} to="countries">Countries</NavLink>
         </li>
       </ul>
-      <p className=''>{loc.pathname}</p>
     </nav>
   )
 }
