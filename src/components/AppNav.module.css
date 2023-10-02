@@ -1,0 +1,54 @@
+.nav {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  /* background-color: var(--color-dark--2); */
+  border-radius: 30px;
+
+  position: relative;
+  background: #000000;
+  /* border: 3px solid red; */
+}
+
+.nav a:link,
+.nav a:visited {
+  width: 120px;
+  display: block;
+  position: relative;
+  z-index: 3;
+  padding: 0.5rem 2rem;
+
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bg {
+  left: 0;
+	top: 0;
+	position: absolute;
+	width: 120px;
+	height: 100%;
+	background: #4f00a2;
+	border-radius: 30px;
+	transition: .5s;
+  z-index: 2;
+}
+
+.bg.left {
+  left: 0;
+}
+.bg.right {
+  left: 120px;
+}
+
+/* CSS Modules feature */
+/* .nav a:global(.active) {
+  background-color: var(--color-dark--0);
+} */
