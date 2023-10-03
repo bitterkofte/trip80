@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import PricingPage from './pages/PricingPage'
@@ -8,6 +8,8 @@ import NotFoundPage from './pages/NotFoundPage'
 import CityList from "./components/CityList"
 import CountryList from "./components/CountryList"
 import { useEffect, useState } from "react"
+import City from "./components/City"
+import Form from "./components/Form"
 // import PageNav from "./components/PageNav"
 
 const BASE_URL = 'http://localhost:8000'
@@ -46,10 +48,12 @@ const App = () => {
             <Route path="login" element={<LoginPage />} />
 
             <Route path="app" element={<AppPage />}>
-              <Route index element={<CityList cities={cities} isLoading={isLoading} />} />
+              <Route index element={<Navigate replace to="cities" />} />
               <Route path="cities" element={<CityList cities={cities} isLoading={isLoading} />} />
+              <Route path="cities/:id" element={<City />} />
+
               <Route path="countries" element={<CountryList cities={cities} isLoading={isLoading}/>} />
-              <Route path="form" element={<p>form</p>} />
+              <Route path="form" element={<Form />} />
             </Route>
 
             <Route path="*" element={<NotFoundPage />} />

@@ -4,7 +4,10 @@ import { useState } from 'react'
 
 const AppNav = () => {
   const loc = useLocation();
-  const [toggle, setToggle] = useState(loc.pathname ===  "/app/countries" ? false : true)
+  // const param = useParams();
+  // console.log('param: ', param)
+  // console.log('loc: ', loc)
+  const [toggle, setToggle] = useState(loc.pathname.includes("countries") ? false : true)
   return (
     <nav className={styles.nav}>
       <ul>
